@@ -9,7 +9,7 @@ const Navbar = () => {
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
     };
-    const { user } = useContext(AuthContext)
+    const { user, Logout } = useContext(AuthContext)
     const navlink = [
         {
             name: 'Home',
@@ -36,8 +36,18 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar */}
-            <nav className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... text-white px-4 py-3 flex justify-between items-center">
-                <div className="text-xl font-bold">Job Portal</div>
+            <nav className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white px-4 py-3 flex  items-center justify-between">
+                <div className="flex items-center space-x-2">
+                     <div className=" rounded-full h-10 w-10">
+                    {
+                        user && <img className="rounded-full" src={user.photoURL} alt="" />
+                     }
+                    
+                    </div>
+                     <div className="text-xl font-bold">Job Portal</div>
+                </div>
+                
+                
                 <div className="hidden md:flex items-center space-x-6">
                     {
                         navlink.map(data => <NavLink
@@ -47,9 +57,11 @@ const Navbar = () => {
                             onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
                     }
                     {
-                        user ? <Link className="text-start p-2 rounded bg-black">LogOut</Link> : <Link to='/login' className="text-start p-2 rounded bg-black">Login</Link>
+                        user ? <Link onClick={Logout} className="text-start p-2 rounded bg-black">LogOut</Link> : <Link to='/login' className="text-start p-2 rounded bg-black">Login</Link>
                     }
                     <Link to='/register' className="text-start rounded p-2 bg-green-600">Register</Link>
+                
+                
                 </div>
 
                 <div className="md:hidden">
