@@ -40,12 +40,16 @@ const Navbar = () => {
                 <div className="text-xl font-bold">Job Portal</div>
                 <div className="hidden md:flex items-center space-x-6">
                     {
-                        navlink.map(data => <NavLink onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
+                        navlink.map(data => <NavLink
+                            className={({ isActive }) =>
+                                isActive ? " font-bold border border-2xl p-1 rounded" : "text-white"
+                            }
+                            onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
                     }
                     {
-                        user ? <Link className="text-start p-2 rounded bg-black">LogOut</Link> : <Link className="text-start p-2 rounded bg-black">Login</Link>
+                        user ? <Link className="text-start p-2 rounded bg-black">LogOut</Link> : <Link to='/login' className="text-start p-2 rounded bg-black">Login</Link>
                     }
-                    <Link className="text-start rounded p-2 bg-green-600">Register</Link>
+                    <Link to='/register' className="text-start rounded p-2 bg-green-600">Register</Link>
                 </div>
 
                 <div className="md:hidden">
@@ -56,16 +60,20 @@ const Navbar = () => {
             </nav>
 
             {/* Sidebar for Mobile */}
-            <div className={`fixed  top-0 left-0 w-64 h-full backdrop-blur-lg bg-white/30 rounded-lg text-white p-5 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
+            <div style={{}} className={`fixed  top-0 left-0 w-64 h-full backdrop-blur-lg bg-white/30 rounded-lg text-white p-5 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-50 md:hidden`}>
                 <h2 className="text-2xl font-bold mb-6">Job Portal</h2>
                 <nav className="flex flex-col space-y-4">
                     {
-                        navlink.map(data => <NavLink onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
+                        navlink.map(data => <NavLink
+                            className={({ isActive }) =>
+                                isActive ? " font-bold border border-2xl p-1 rounded" : "text-white"
+                            }
+                            onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
                     }
                     {
-                        user ? <Link  className="text-start p-2 rounded bg-black">LogOut</Link> : <Link className="text-start p-2 rounded bg-black">Login</Link>
+                        user ? <Link onClick={toggleSidebar} className="text-start p-2 rounded bg-black">LogOut</Link> : <Link onClick={toggleSidebar} to="/login" className="text-start p-2 rounded bg-black">Login</Link>
                     }
-                    <Link className="text-start rounded p-2 bg-green-600">Register</Link>
+                    <Link onClick={toggleSidebar} to='/register' className="text-start rounded p-2 bg-green-600">Register</Link>
                 </nav>
 
             </div>
