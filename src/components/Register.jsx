@@ -5,7 +5,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { AuthContext } from "../Provider/Authprovider";
 import app from "../firebase/firebase.init";
 import Lottie from "lottie-react";
-import registerLottieData from '../assets/lotte/LoginLottefile.json'
+import registerLottieData from '../assets/lotte/registeranimation.json'
 const Register = () => {
   const navigate = useNavigate()
   const { setuser, CreateNewUser, updateUserProfile } = useContext(AuthContext)
