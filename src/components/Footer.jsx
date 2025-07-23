@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
                 {/* Company Info */}
                 <div>
-                    <h1 className="flex gap-2  items-center-center text-lg font-semibold mb-4">JOb Portal</h1>
+                    <h1 className="flex gap-2  items-center-center text-lg font-semibold mb-4">Job Portal</h1>
                     <p className="mt-2 text-sm">
                       
                         Your career starts here.<br></br>
