@@ -7,6 +7,7 @@ const Navbar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const toggleSidebar = () => {
+        
         setSidebarOpen(!sidebarOpen);
     };
     const { user, Logout } = useContext(AuthContext)
@@ -83,7 +84,7 @@ const Navbar = () => {
                             onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
                     }
                     {
-                        user ? <Link onClick={toggleSidebar} className="text-start p-2 rounded bg-black">LogOut</Link> : <Link onClick={toggleSidebar} to="/login" className="text-start p-2 rounded bg-black">Login</Link>
+                        user ? <button onClickCapture={toggleSidebar} className="text-start p-2 rounded bg-black" onClick={Logout}><Link  onClick={toggleSidebar}  className="text-start p-2 rounded bg-black">LogOut</Link></button> : <Link onClick={toggleSidebar} to="/login" className="text-start p-2 rounded bg-black">Login</Link>
                     }
                     <Link onClick={toggleSidebar} to='/register' className="text-start rounded p-2 bg-green-600">Register</Link>
                 </nav>

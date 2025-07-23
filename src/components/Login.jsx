@@ -1,6 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext } from 'react';
-import { Link, Links, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Provider/Authprovider';
