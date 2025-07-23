@@ -42,11 +42,12 @@ const Authprovider = ({children}) => {
     },[])
     //LogIn
     const  login =(email,password)=>{
-        setloading(false);
+        setloading(true);
         return signInWithEmailAndPassword(auth,email,password)
     }
     //Logout
     const Logout=()=>{
+        setloading(true)
         return signOut(auth)
     }
     //Forgot password
