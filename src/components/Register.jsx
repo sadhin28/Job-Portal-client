@@ -53,8 +53,8 @@ const Register = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-2">
-      <div className="md:mt-40 lg:mt-0 ">
+    <div className="grid md:grid-cols-2 p-5">
+      <div className="md:mt-20 lg:mt-0 ">
          <Lottie  animationData={registerLottieData}></Lottie>
       </div>
       <div className="flex items-center justify-center mt-5 mb-5">
