@@ -8,7 +8,7 @@ const Root = () => {
         // bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white h-[100vh]
         <div className=''>
              <Navbar></Navbar>
-            <div className='max-w-7xl mx-auto min-h-[calc(100vh-417px)]'>
+            <div className='max-w-8xl mx-auto min-h-[calc(100vh-417px)]'>
                  <Outlet></Outlet>
             </div>
             <Footer></Footer>
