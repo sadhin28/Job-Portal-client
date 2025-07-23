@@ -37,7 +37,7 @@ useEffect(() => {
         <Link
         data-aos="zoom-in"
         data-aos-delay="400"
-        to='/jobs' className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+        to='/jobs' className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white  font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
           Find a Job
         </Link>
       </div>
