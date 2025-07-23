@@ -10,7 +10,7 @@ import Myapplications from "../components/Myapplications";
 import MyJobPost from "../components/MyJobPost";
 import Login from "../components/Login";
 import Register from "../components/Register";
-
+import Privateroute from '../Route/Privateroute'
 const router = createBrowserRouter([
    {
     path:'/',
@@ -28,15 +28,15 @@ const router = createBrowserRouter([
         },
         {
             path:'/add-jobs',
-            element:<AddJob></AddJob>
+            element:<Privateroute><AddJob></AddJob></Privateroute>
         },
         {
             path:'/application/me',
-            element:<Myapplications></Myapplications>
+            element:<Privateroute><Myapplications></Myapplications></Privateroute>
         },
         {
             path:'/my-jobs',
-            element:<MyJobPost></MyJobPost>
+            element:<Privateroute><MyJobPost></MyJobPost></Privateroute>
         },
         {
             path:'/login',

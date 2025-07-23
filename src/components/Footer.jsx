@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa6"
 import { Link } from "react-router-dom";
 const Footer = () => {
     return (
-        <footer className='text-white bg-gradient-to-br from-black via-gray-900 to-gray-800  '>
+        <footer className='text-white bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... '>
             <div className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-6">
                 {/* Company Info */}
                 <div>
@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-gray-400"></div>
+            <div className="border-t border-black-300"></div>
 
             {/* Bottom Section */}
 

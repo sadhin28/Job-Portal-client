@@ -1,6 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext } from 'react';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link,  Navigate,  useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Provider/Authprovider';
@@ -41,7 +41,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(res => {
                 setuser(res.user)
-                res.user && navigate('/')
+                // res.user &&  navigate('/')
             })
             .catch(error => {
                 
