@@ -37,7 +37,7 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar */}
-            <nav className="sticky  top-0 z-10 bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white md:text-xs lg:text-sm md:px-10 lg:px-36 px-4 py-3 flex  items-center justify-between">
+            <nav className="sticky  top-0 z-10 bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white md:text-xs lg:text-sm md:px-10 lg:px-20 px-4 py-3 flex  items-center justify-between">
                 <div className="flex  items-center gap-2">
                      <div className=" rounded-full h-10 w-10">
                     {
