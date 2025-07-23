@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/Authprovider";
-
+import userIcon from '../assets/user/image.png'
 const Navbar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -37,11 +37,11 @@ const Navbar = () => {
     return (
         <>
             {/* Navbar */}
-            <nav className="sticky top-0 z-10 bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white px-4 py-3 flex  items-center justify-between">
-                <div className="flex items-center gap-2">
+            <nav className="sticky  top-0 z-10 bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white md:px-36 px-4 py-3 flex  items-center justify-between">
+                <div className="flex  items-center gap-2">
                      <div className=" rounded-full h-10 w-10">
                     {
-                        user && <img className="rounded-full h-10 w-10" src={user.photoURL} alt="" />
+                        user ? <img className="rounded-full h-10 w-10" src={user.photoURL} alt="" />:<img className="rounded-full h-10 w-10" src={userIcon} alt="" />
                      }
                     
                     </div>
