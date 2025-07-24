@@ -14,6 +14,7 @@ import img8 from '../assets/user/salesforce.png'
 import img9 from '../assets/user/sap.png'
 import img10 from '../assets/user/vmware.png'
 import Marquee from 'react-fast-marquee'
+import { TypeAnimation } from "react-type-animation";
 const Banner = () => {
 
 
@@ -26,9 +27,28 @@ const Banner = () => {
         <span data-aos="fade-up" className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
           Better every day
         </span>
-        <h3 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold">
-          Your Dream Job is Just a Click Away
+        <h3 data-aos="fade-up">
+          <TypeAnimation
+            sequence={[
+              'Your Dream Job is Just a Click Away',
+              2000,
+              'Apply Now and Shape Your Future',
+              2000,
+              'Explore 1000+ Opportunities Daily',
+              2000,
+              () => console.log('Cycle Completed'),
+            ]}
+            wrapper="span"
+            cursor={true}
+            repeat={Infinity}
+            style={{ fontSize: '2em', display: 'inline-block' }}
+          />
+
+
+
+
         </h3>
+
         <p data-aos="fade-up"
           data-aos-delay="200"
           className="text-base md:text-lg text-slate-700 my-4 md:my-6">
