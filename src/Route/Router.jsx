@@ -7,11 +7,14 @@ import Errorpage from "../components/Errorpage";
 import Alljobs from "../components/Alljobs";
 import AddJob from "../components/AddJob";
 import Myapplications from "../components/Myapplications";
-import MyJobPost from "../components/MyJobPost";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Privateroute from '../Route/Privateroute'
 import Jobdetails from "../components/Jobdetails";
+import Applyforjob from "../components/Applyforjob";
+import MyJobPost from "../components/MyJobPost";
+
+
 const router = createBrowserRouter([
    {
     path:'/',
@@ -42,6 +45,11 @@ const router = createBrowserRouter([
         {
             path:'/jobdetails/:id',
             element:<Privateroute><Jobdetails></Jobdetails></Privateroute>,
+            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+        },
+        {
+            path:'/jobapply/:id',
+            element:<Privateroute><Applyforjob></Applyforjob></Privateroute>,
             loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
         },
         {

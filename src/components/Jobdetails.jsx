@@ -16,6 +16,7 @@ const Jobdetails = () => {
     company_logo,
     hr_email,
     hr_name,
+      _id
   } = job;
     return (
        <div className='p-2 bg-gradient-to-r  from-indigo-400  to-pink-400 ... '>
@@ -101,9 +102,9 @@ const Jobdetails = () => {
 
       {/* Apply Button */}
       <div className="mt-8">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition">
+        <Link to={`/jobapply/${_id}`} className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl transition">
           Apply for this job
-        </button>
+        </Link>
       </div>
     </div>
        </div>
