@@ -27,7 +27,7 @@ const Banner = () => {
         <span data-aos="fade-up" className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
           Better every day
         </span>
-        <h3 data-aos="fade-up">
+        <h3 className="font-bold " data-aos="fade-up">
           <TypeAnimation
             sequence={[
               'Your Dream Job is Just a Click Away',
@@ -41,7 +41,7 @@ const Banner = () => {
             wrapper="span"
             cursor={true}
             repeat={Infinity}
-            style={{ fontSize: '2em', display: 'inline-block' }}
+            style={{ fontSize: '1.5em', display: 'inline-block' }}
           />
 
 

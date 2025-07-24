@@ -53,7 +53,7 @@ const Register = () => {
   }
 
   return (
-    <div className="grid md:grid-cols-2 p-5">
+    <div className="bg-gradient-to-r  from-indigo-400  to-pink-400 ... grid md:grid-cols-2 p-5">
       <div className="md:mt-20 lg:mt-0 ">
         <Lottie animationData={registerLottieData}></Lottie>
       </div>
