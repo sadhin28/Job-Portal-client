@@ -1,11 +1,14 @@
 
 import { useLoaderData } from 'react-router-dom'
 import applyanimation from '../assets/lotte/apply.json'
-import { div } from 'motion/react-client';
 import Lottie from 'lottie-react';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/Authprovider';
+import { useContext } from 'react';
 const Applyforjob = () => {
+  const {user}=useContext(AuthContext)
   const job = useLoaderData(); // Assuming you're loading job details
-  const { title, company } = job;
+  const { title, company,_id } = job;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,18 +17,25 @@ const Applyforjob = () => {
    const phone=e.target.phone.value;
    const coverLetter=e.target.coverLetter.value;
    const githuburl=e.target.githuburl.value;
-   const applicationData ={name,email,phone,coverLetter,githuburl,title,company}  
-   console.log(applicationData) 
+   const job_id=_id;
+   const applicationData ={name,email,phone,coverLetter,githuburl,title,company,job_id}  
+   console.log(applicationData)
+   Swal.fire({
+  title: `${company}`,
+  text:`Your application for the ${title} position has been submitted successfully!`,
+  icon: "success",
+  draggable: true
+}); 
 };
 
   return (
     <div className=' px-3 bg-gradient-to-r  from-indigo-400  to-pink-400 ... grid md:grid-cols-2 items-center justify-center'>
-
-        <div className='md:mt-10 mt-8 lg:mt-0 '>
+        
+        <div className=''>
             <Lottie className='' animationData={applyanimation}></Lottie>
         </div>
 
-        <div className="mt-32  mb-32 w-full max-w-3xl p-8 bg-gradient-to-r  from-indigo-200  to-pink-300 ... rounded-lg shadow-md">
+        <div className="w-full max-w-3xl p-8 bg-gradient-to-r  from-indigo-200  to-pink-300 ... rounded-lg shadow-md">
        
       <h2 className="text-2xl font-semibold mb-4 text-gray-800">Apply for {title}</h2>
       <form onSubmit={handleSubmit} className="py-4">
@@ -63,6 +73,7 @@ const Applyforjob = () => {
             <input
               type="email"
               name="email"
+              value={user.email}
               required
               
               className="mt-1 block w-full px-4 py-2 border rounded focus:ring-2 focus:ring-indigo-400"
