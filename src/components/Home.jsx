@@ -1,16 +1,32 @@
+
+import { useEffect, useState } from "react";
 import Banner from "./Banner";
+import Hotjob from "./Hotjob";
 import JobIndustry from "./JobIndustry";
 import ToptenCompany from "./ToptenCompany";
 
 const Home = () => {
+  const [job, setjobs] =useState([]);
+    console.log(job)
+    useEffect(() => {
+        fetch('http://localhost:5000/jobs')
+            .then(res => res.json())
+            .then(data =>setjobs(data))
+    }, [])
     return (
-        <div>
+        <div className="w-11/12 mx-auto">
            <Banner></Banner>
-           <div>
+           <JobIndustry></JobIndustry>
+            <div>
              <h1 className="text-center py-10 font-bold  md:text-2xl">Top 10 Largest Software Companies In The World</h1>
              <ToptenCompany></ToptenCompany>
            </div>
-           <JobIndustry></JobIndustry>
+           <section  className=" mt-20 mb-10 grid md:grid-cols-3 gap-10">
+             {
+              
+              job.map(job=> <Hotjob  job={job} key={job._id}></Hotjob>)
+             }
+           </section>
         </div>
     );
 };
