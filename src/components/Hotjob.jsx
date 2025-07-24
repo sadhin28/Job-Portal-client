@@ -1,3 +1,5 @@
+import { FaEye } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Hotjob = ({job}) => {
      const {
@@ -10,6 +12,7 @@ const Hotjob = ({job}) => {
     company,
     requirements,
     company_logo,
+    _id
   } = job;
 
     return (
@@ -64,9 +67,10 @@ const Hotjob = ({job}) => {
 
       {/* CTA Button */}
       <div className="mt-6">
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300">
-          Apply Now
-        </button>
+        <Link to={`jobdetails/${_id}`} className="w-full flex justify-center items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300">
+           <FaEye></FaEye>
+           View Details
+        </Link>
       </div>
     </div>
     );
