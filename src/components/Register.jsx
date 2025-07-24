@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { AuthContext } from "../Provider/Authprovider";
@@ -7,7 +7,10 @@ import app from "../firebase/firebase.init";
 import Lottie from "lottie-react";
 import registerLottieData from '../assets/lotte/registeranimation.json'
 const Register = () => {
-  const navigate = useNavigate()
+ const location =useLocation()
+    const navigate = useNavigate()
+    
+    const from = location.state || '/'
   const { setuser, CreateNewUser, updateUserProfile } = useContext(AuthContext)
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -30,7 +33,7 @@ const Register = () => {
         updateUserProfile(name, photoUrl)
           .then(() => {
 
-            navigate("/");
+             result.user &&navigate(from)
             toast.success("Profile updated successfully")
           })
       });
@@ -43,7 +46,7 @@ const Register = () => {
     signInWithPopup(auth, provider)
       .then(res => {
         setuser(res.user)
-        res.user && navigate('/')
+         res.user &&navigate(from)
       })
       .catch(error => {
 

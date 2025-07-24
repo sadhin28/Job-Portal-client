@@ -7,10 +7,14 @@ import { AuthContext } from '../Provider/Authprovider';
 import loginAnimation from '../assets/lotte/LoginAnimation.json'
 import app from '../firebase/firebase.init';
 import Lottie from 'lottie-react';
-const Login = () => {
-    const navigate = useNavigate()
-    const { setuser, login, forgotPassword } = useContext(AuthContext)
 
+const Login = () => {
+    const location =useLocation()
+    const navigate = useNavigate()
+    
+    const from = location.state || '/'
+    const { setuser, login, forgotPassword } = useContext(AuthContext)
+    
 
 
     const handleSubmit = (e) => {
@@ -28,7 +32,7 @@ const Login = () => {
                 //update user login time
                
 
-                  result.user &&navigate('/')
+                  result.user &&navigate(from)
             })
             .catch(error => {
                toast.error(error.message)
@@ -41,7 +45,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(res => {
                 setuser(res.user)
-                // res.user &&  navigate('/')
+                res.user &&navigate(from)
             })
             .catch(error => {
                 
