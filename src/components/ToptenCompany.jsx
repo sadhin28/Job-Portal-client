@@ -24,7 +24,7 @@ const ToptenCompany = () => {
 
     ]
     return (
-        <div className='bg-gray-100 py-4 mb-5'>
+        <div className='bg-gray-100 '>
             <Marquee pauseOnHover={true} speed={50}>
                 {
                     images.map((src,index)=>(
