@@ -1,6 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useContext } from 'react';
-import { Link,  Navigate,  useNavigate } from 'react-router-dom';
+import { Link,  Navigate,  useLocation,  useNavigate } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
 import { AuthContext } from '../Provider/Authprovider';
@@ -28,7 +28,7 @@ const Login = () => {
                 //update user login time
                
 
-                  result.user && navigate('/')
+                  result.user &&navigate('/')
             })
             .catch(error => {
                toast.error(error.message)
