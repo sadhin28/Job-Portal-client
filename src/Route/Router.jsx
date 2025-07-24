@@ -14,9 +14,9 @@ import Jobdetails from "../components/Jobdetails";
 import Applyforjob from "../components/Applyforjob";
 import MyJobPost from "../components/MyJobPost";
 
-
 const router = createBrowserRouter([
-   {
+ 
+    {
     path:'/',
     element:<Root></Root>,
     errorElement:<Errorpage></Errorpage>,
@@ -36,7 +36,8 @@ const router = createBrowserRouter([
         },
         {
             path:'/application/me',
-            element:<Privateroute><Myapplications></Myapplications></Privateroute>
+            element:<Privateroute><Myapplications></Myapplications></Privateroute>,
+            
         },
         {
             path:'/my-jobs',

@@ -36,7 +36,7 @@ const Banner = () => {
               2000,
               'Explore 1000+ Opportunities Daily',
               2000,
-              () => console.log('Cycle Completed'),
+              () => {},
             ]}
             wrapper="span"
             cursor={true}
