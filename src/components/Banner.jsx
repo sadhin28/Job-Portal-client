@@ -17,9 +17,9 @@ import Marquee from 'react-fast-marquee'
 const Banner = () => {
 
 
-useEffect(() => {
-  AOS.init({ duration: 1000 }); // Animation duration in ms
-}, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // Animation duration in ms
+  }, []);
   return (
     <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
@@ -27,17 +27,17 @@ useEffect(() => {
           Better every day
         </span>
         <h3 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold">
-        Your Dream Job is Just a Click Away
+          Your Dream Job is Just a Click Away
         </h3>
         <p data-aos="fade-up"
-         data-aos-delay="200"
+          data-aos-delay="200"
           className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-         Discover top jobs, connect with leading employers, and grow your career. Join now to unlock new opportunities every day.
+          Discover top jobs, connect with leading employers, and grow your career. Join now to unlock new opportunities every day.
         </p>
         <Link
-        data-aos="zoom-in"
-        data-aos-delay="400"
-        to='/jobs' className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white  font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          to='/jobs' className="bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white  font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
           Find a Job
         </Link>
       </div>
@@ -66,7 +66,7 @@ const shuffle = (array) => {
 const squareData = [
   {
     id: 1,
-    src:img1,
+    src: img1,
   },
   {
     id: 2,
@@ -82,15 +82,15 @@ const squareData = [
   },
   {
     id: 5,
-    src:img5,
+    src: img5,
   },
   {
     id: 6,
-    src:img6,
+    src: img6,
   },
   {
     id: 7,
-    src:img7,
+    src: img7,
   },
   {
     id: 8,
@@ -98,7 +98,7 @@ const squareData = [
   },
   {
     id: 9,
-    src:img9,
+    src: img9,
   },
   {
     id: 10,
