@@ -19,13 +19,14 @@ const Applyforjob = () => {
 };
 
   return (
-    <div className=' px-3 bg-gradient-to-r  from-indigo-400  to-pink-400 ... grid md:grid-cols-2 '>
+    <div className=' px-3 bg-gradient-to-r  from-indigo-400  to-pink-400 ... grid md:grid-cols-2 items-center justify-center'>
 
         <div className='md:mt-10 mt-8 lg:mt-0 '>
             <Lottie className='' animationData={applyanimation}></Lottie>
         </div>
 
         <div className="mt-32  mb-32 w-full max-w-3xl p-8 bg-gradient-to-r  from-indigo-200  to-pink-300 ... rounded-lg shadow-md">
+       
       <h2 className="text-2xl font-semibold mb-4 text-gray-800">Apply for {title}</h2>
       <form onSubmit={handleSubmit} className="py-4">
         <div>
