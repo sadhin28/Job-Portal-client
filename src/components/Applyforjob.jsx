@@ -8,7 +8,8 @@ import { useContext } from 'react';
 const Applyforjob = () => {
     const { user } = useContext(AuthContext)
     const job = useLoaderData(); // Assuming you're loading job details
-    const { title, company, _id } = job;
+    const { title, company, _id,company_logo
+ } = job;
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,7 +19,8 @@ const Applyforjob = () => {
         const coverLetter = e.target.coverLetter.value;
         const githuburl = e.target.githuburl.value;
         const job_id = _id;
-        const applicationData = { name, applicant_email, phone, coverLetter, githuburl, title, company, job_id }
+        const applicationData = { name, applicant_email, phone, coverLetter, githuburl, title, company, job_id,company_logo
+ }
 
         //post now
         fetch('http://localhost:5000/apply', {
