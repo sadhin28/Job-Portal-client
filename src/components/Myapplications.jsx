@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/Authprovider';
 import Swal from 'sweetalert2';
+import { div } from 'motion/react-client';
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
@@ -41,8 +42,9 @@ const Myapplications = () => {
         });
     }
     return (
-        <div className="p-4 max-w-6xl mx-auto ">
-            <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">
+        <div className='min-h-screen bg-gradient-to-r  from-indigo-400  to-pink-400 ... '>
+            <div className="pt-4 max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center text-white">
                 My Job Applications
             </h2>
 
@@ -58,7 +60,7 @@ const Myapplications = () => {
                             <th className="py-3 px-6 text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody className="text-gray-700">
+                    <tbody className="text-gray-700 ">
                         {applications.map((app) => (
                             <tr
                                 key={app._id}
@@ -96,13 +98,13 @@ const Myapplications = () => {
             </div>
 
             {/* Card view (Mobile Only) */}
-            <div className="block lg:hidden mt-6 space-y-4">
+            <div className="px-4 block lg:hidden mt-6 space-y-4">
                 {applications.length > 0 ? (
-                    <div>
+                    <div className='grid gap-4'>
                         {applications.map((app) => (
                             <div
                                 key={app._id}
-                                className="bg-gradient-to-r  from-indigo-200 via-purple-300 to-pink-200 ... p-4 rounded-xl shadow space-y-2 border"
+                                className=" bg-gradient-to-r  from-indigo-200 via-purple-300 to-pink-200 ... p-4 rounded-xl shadow space-y-2 border"
                             >
                                 <div className="flex items-center gap-4">
                                     <img
@@ -137,6 +139,7 @@ const Myapplications = () => {
                 )
                 }
             </div>
+        </div>
         </div>
 
     );

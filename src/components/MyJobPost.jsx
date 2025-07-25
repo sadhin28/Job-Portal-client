@@ -50,10 +50,11 @@ const MyJobPost = () => {
              navigate(`/jobdetails/${id}`)
         }
     return (
-       <div className="pb-20 pt-10 px-4 bg-gradient-to-r  from-indigo-400  to-pink-400 ... ">
+       <div className="min-h-screen px-4 bg-gradient-to-r  from-indigo-400  to-pink-400 ... ">
+          <h1 className="text-3xl font-bold pt-10 text-center text-white">My Posted Job</h1>
           {
             job.length>0?(
-                <div>
+                <div className="py-10">
                       {
                  job.map(job=><MyJobPostCard onViewDetails={onViewDetails} onDelete={onDelete} onUpdate={onUpdate} job={job}></MyJobPostCard>)
                }
