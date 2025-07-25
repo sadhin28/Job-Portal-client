@@ -1,8 +1,11 @@
 import  { useContext, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
-import { div } from "motion/react-client";
+
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddJob = () => {
+  const navigate=useNavigate()
   const {user}=useContext(AuthContext)
   const [formData, setFormData] = useState({
     title: "",
@@ -81,11 +84,41 @@ const AddJob = () => {
     
     // TODO: send dataToSend to backend using fetch/axios
      console.log(dataToSend)
+        //post now
+             fetch('http://localhost:5000/jobs', {
+                 method: 'POST',
+                 headers: {
+                     'content-type': 'application/json'
+                 },
+                 body: JSON.stringify(dataToSend)
+             })
+                 .then(res => res.json())
+                 .then(data => {
+                     
+                         navigate('/my-jobs')
+                         e.value = ''
+                         Swal.fire({
+                             title: `${dataToSend.company}`,
+                             text: `Your Job Post has been submitted successfully!`,
+                             icon: "success",
+                             draggable: true
+                         });
+                     
+     
+                 })
+                 .catch(error => {
+                     Swal.fire({
+                         title: `${dataToSend.company}`,
+                         text: `${error.message}`,
+                         icon: "error",
+                         draggable: true
+                     });
+                 })
 
   };
 
   return (
-    <div className="bg-gradient-to-r  py-1 from-indigo-400  to-pink-400 ...">
+    <div className="bg-gradient-to-r  py-1 px-2 from-indigo-400  to-pink-400 ...">
         <div className="mt-10 mb-10">
             <form
       onSubmit={handleSubmit}
