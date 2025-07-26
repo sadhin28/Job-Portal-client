@@ -9,6 +9,7 @@ const ViewApplicationJob = () => {
                 <table className="min-w-full table-auto border-collapse border border-gray-200">
                     <thead className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-xs sm:text-sm uppercase">
                         <tr className="text-center">
+                            <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Index</th>
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Logo</th>
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Name</th>
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Title</th>
@@ -18,11 +19,12 @@ const ViewApplicationJob = () => {
                     </thead>
                     <tbody className=" text-center text-xs sm:text-sm">
                         {applications.length > 0 ? (
-                            applications.map((app) => (
+                            applications.map((app,index) => (
                                 <tr
                                     key={app._id}
                                     className="border-t  border-gray-300 hover:bg-gray-50 transition duration-300"
                                 >
+                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300 font-medium">{index +1}</td>
                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300">
                                         <img
                                             src={app.company_logo}

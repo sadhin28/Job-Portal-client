@@ -59,6 +59,8 @@ const Myapplications = () => {
                 <table className="min-w-full table-auto">
                     <thead className="bg-gradient-to-r   from-indigo-500 via-purple-500 to-pink-500 ...   text-sm uppercase text-white">
                         <tr>
+                            
+                            <th className="py-3 px-6">Index</th>
                             <th className="py-3 px-6">Logo</th>
                             <th className="py-3 px-6">Company</th>
                             <th className="py-3 px-6">Title</th>
@@ -67,12 +69,13 @@ const Myapplications = () => {
                         </tr>
                     </thead>
                     <tbody className="text-gray-700 ">
-                        {applications.map((app) => (
+                        {applications.map((app,index) => (
                             <tr
                                 key={app._id}
                                 className="border-t hover:bg-gray-50 transition duration-300 text-center"
-                            >
+                            >     <td className="py-4 px-6 font-semibold">{index +1}</td>
                                 <td className="py-4 px-6">
+                                
                                     <img
                                         src={app.company_logo}
                                         alt="Company Logo"
