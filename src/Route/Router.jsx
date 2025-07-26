@@ -48,22 +48,22 @@ const router = createBrowserRouter([
         {
             path:'/viewApplication/:job_id',
             element:<Privateroute><ViewApplicationJob></ViewApplicationJob></Privateroute>,
-            loader:({params})=>fetch(`http://localhost:5000/job-application/${params.job_id}`)
+            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/job-application/${params.job_id}`)
         },
         {
             path:'/jobdetails/:id',
             element:<Privateroute><Jobdetails></Jobdetails></Privateroute>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
         },
         {
             path:'/jobapply/:id',
             element:<Privateroute><Applyforjob></Applyforjob></Privateroute>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
         },
         {
             path:'/UpdateJobPost/:id',
             element:<Privateroute><UpdateJobPost></UpdateJobPost></Privateroute>,
-            loader:({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
         },
         {
             path:'/login',

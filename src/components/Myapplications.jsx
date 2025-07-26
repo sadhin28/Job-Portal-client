@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom';
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
-    const [allApply, setallApply] = useState([]);
-    console.log(allApply.map(data=>data.job_id))
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        fetch(`http://localhost:5000/job-application?email=${user.email}`)
+        fetch(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => setapplication(data))
     }, [])
     useEffect(() => {
-        fetch(`http://localhost:5000/apply`)
+        fetch(`https://job-portal-server-ed8n.onrender.com/apply`)
             .then(res => res.json())
             .then(data => setallApply(data))
     }, [])
@@ -29,7 +27,7 @@ const Myapplications = () => {
             confirmButtonText: "Confirm Delete"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/apply/${_id}`, {
+                fetch(`https://job-portal-server-ed8n.onrender.com/apply/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

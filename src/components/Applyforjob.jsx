@@ -23,7 +23,7 @@ const Applyforjob = () => {
  }
 
         //post now
-        fetch('http://localhost:5000/apply', {
+        fetch('https://job-portal-server-ed8n.onrender.com/apply', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

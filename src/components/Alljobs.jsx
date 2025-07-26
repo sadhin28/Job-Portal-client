@@ -5,7 +5,7 @@ const Alljobs = () => {
   const [job, setjobs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/jobs")
+    fetch("https://job-portal-server-ed8n.onrender.com/jobs")
       .then((res) => res.json())
       .then((data) => setjobs(data));
   }, []);

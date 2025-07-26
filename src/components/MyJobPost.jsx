@@ -2,16 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/Authprovider";
 import MyJobPostCard from "./MyJobPostCard";
 import { useNavigate } from "react-router-dom";
-import { div } from "motion/react-client";
 import Swal from "sweetalert2";
 
 const MyJobPost = () => {
        const [job,setMyJobPosts]=useState([]);
         const {user}=useContext(AuthContext)
-       console.log(job)
+   
         const navigate= useNavigate()
         useEffect(()=>{
-            fetch(`http://localhost:5000/my-jobposts?email=${user.email}`)
+            fetch(`https://job-portal-server-ed8n.onrender.com/my-jobposts?email=${user.email}`)
             .then(res=>res.json())
             .then(data=>setMyJobPosts(data))
         },[])
@@ -26,7 +25,7 @@ const MyJobPost = () => {
                         confirmButtonText: "Confirm Delete"
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            fetch(`http://localhost:5000/jobs/${id}`, {
+                            fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${id}`, {
                                 method: 'DELETE'
                             })
                                 .then(res => res.json())

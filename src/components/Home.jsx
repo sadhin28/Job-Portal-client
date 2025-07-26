@@ -7,7 +7,7 @@ import ToptenCompany from "./ToptenCompany";
 
 const Home = () => {
   const [job, setjobs] =useState([]);
-    console.log(job)
+   
     useEffect(() => {
         fetch('http://localhost:5000/jobs')
             .then(res => res.json())

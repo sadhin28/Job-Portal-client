@@ -82,10 +82,9 @@ const AddJob = () => {
     };
 
     
-    // TODO: send dataToSend to backend using fetch/axios
-     console.log(dataToSend)
+    
         //post now
-             fetch('http://localhost:5000/jobs', {
+             fetch('https://job-portal-server-ed8n.onrender.com/jobs', {
                  method: 'POST',
                  headers: {
                      'content-type': 'application/json'

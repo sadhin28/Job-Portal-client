@@ -82,12 +82,8 @@ const UpdateJobPost = () => {
             company_logo: formData.company_logo_base64, // base64 image string
         };
 
-
-
-        console.log(dataToSend)
-        console.log(updateJobs._id)
         //update Post
-        fetch(`http://localhost:5000/jobs/${updateJobs._id}`, {
+        fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${updateJobs._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
