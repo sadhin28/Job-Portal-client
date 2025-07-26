@@ -12,7 +12,8 @@ const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
     salaryRange,
     company,
     company_logo,
-    status
+    status,
+    applicationCount
   } = job;
 
   return (
@@ -40,6 +41,10 @@ const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
         <p>
           <span className="font-semibold text-gray-700">Deadline:</span>{" "}
           {applicationDeadline}
+        </p>
+        <p>
+          <span className="font-semibold text-gray-700">Application Count:</span>{" "}
+           {applicationCount?applicationCount:'0'}
         </p>
         <p>
           <span className="font-semibold text-gray-700">Salary:</span>{" "}

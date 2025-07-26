@@ -44,7 +44,7 @@ const MyJobPost = () => {
                     });
         }
         const onUpdate=()=>{
-
+            
         }
         const onViewDetails=(id)=>{
              navigate(`/jobdetails/${id}`)
