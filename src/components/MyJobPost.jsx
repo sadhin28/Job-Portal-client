@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const MyJobPost = () => {
        const [job,setMyJobPosts]=useState([]);
         const {user}=useContext(AuthContext)
+       console.log(job)
         const navigate= useNavigate()
         useEffect(()=>{
             fetch(`http://localhost:5000/my-jobposts?email=${user.email}`)
@@ -56,7 +57,7 @@ const MyJobPost = () => {
             job.length>0?(
                 <div className="py-10">
                       {
-                 job.map(job=><MyJobPostCard onViewDetails={onViewDetails} onDelete={onDelete} onUpdate={onUpdate} job={job}></MyJobPostCard>)
+                 job.map(job=><MyJobPostCard key={job._id} onViewDetails={onViewDetails} onDelete={onDelete} onUpdate={onUpdate} job={job}></MyJobPostCard>)
                }
                 </div>
             ):(<div>

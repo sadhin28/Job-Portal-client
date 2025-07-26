@@ -52,7 +52,7 @@ const AlljobCard = ({job}) => {
           🗓 Deadline: {applicationDeadline}
         </span>
         <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium">
-          💰 {salaryRange.min} - {salaryRange.max} {salaryRange.currency.toUpperCase()}
+          💰 {salaryRange?.min} - {salaryRange?.max} {salaryRange?.currency?.toUpperCase()}
         </span>
           <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">
           Application Count: {applicationCount?applicationCount:"0"}

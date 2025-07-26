@@ -59,8 +59,8 @@ const Jobdetails = () => {
           <strong>📅 Deadline:</strong> {applicationDeadline}
         </p>
         <p>
-          <strong>💰 Salary:</strong> {salaryRange.min} - {salaryRange.max}{" "}
-          {salaryRange.currency.toUpperCase()}
+          <strong>💰 Salary:</strong> {salaryRange?.min} - {salaryRange?.max}{" "}
+          {salaryRange?.currency?.toUpperCase()}
         </p>
         <p className='flex items-center gap-1'>
           <FaSquareWebAwesome></FaSquareWebAwesome>

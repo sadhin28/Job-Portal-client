@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaEdit, FaTrashAlt, FaInfoCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
  
@@ -57,26 +58,32 @@ const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
   </div>
 
   {/* Buttons */}
-  <div className="flex flex-wrap gap-2 md:flex-col md:items-end">
-    <button
+  <div className="flex  gap-2 md:flex-col md:items-end">
+  <div>
+      <button
       onClick={() => onViewDetails(_id)}
       className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition"
     >
       <FaInfoCircle /> Details
     </button>
-    <button
-      onClick={() => onUpdate(_id)}
+  </div>
+   <div>
+     <Link
+      to={`/UpdateJobPost/${_id}`}
       className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg shadow-sm transition"
     >
       <FaEdit /> Update
-    </button>
+    </Link>
+   </div>
    
-    <button
+   <div>
+      <button
       onClick={() => onDelete(_id)}
       className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-red-500 hover:bg-red-600 text-white rounded-lg shadow-sm transition"
     >
       <FaTrashAlt /> Delete
     </button>
+   </div>
   </div>
 </div>
 
