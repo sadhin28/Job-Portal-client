@@ -2,6 +2,7 @@ import React from 'react';
 import { FaMapMarkerAlt, FaEdit, FaTrashAlt, FaInfoCircle } from 'react-icons/fa';
 
 const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
+ 
   const {
     _id,
     title,
@@ -13,7 +14,8 @@ const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
     company,
     company_logo,
     status,
-    applicationCount
+    applicationCount,
+    
   } = job;
 
   return (
@@ -68,6 +70,7 @@ const MyJobPostCard = ({ job, onDelete, onUpdate,onViewDetails}) => {
     >
       <FaEdit /> Update
     </button>
+   
     <button
       onClick={() => onDelete(_id)}
       className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-red-500 hover:bg-red-600 text-white rounded-lg shadow-sm transition"

@@ -1,16 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/Authprovider';
 import Swal from 'sweetalert2';
-import { div } from 'motion/react-client';
+import { Link } from 'react-router-dom';
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
+    const [allApply, setallApply] = useState([]);
+    console.log(allApply.map(data=>data.job_id))
     const { user } = useContext(AuthContext)
-
     useEffect(() => {
         fetch(`http://localhost:5000/job-application?email=${user.email}`)
             .then(res => res.json())
             .then(data => setapplication(data))
+    }, [])
+    useEffect(() => {
+        fetch(`http://localhost:5000/apply`)
+            .then(res => res.json())
+            .then(data => setallApply(data))
     }, [])
     const handleDelete = (_id) => {
         Swal.fire({
@@ -51,7 +57,7 @@ const Myapplications = () => {
             {/* Table view (Desktop & Tablet Only) */}
             <div className="overflow-x-auto rounded-xl shadow-md bg-gradient-to-r  from-indigo-200 via-purple-300 to-pink-200 ... hidden lg:block">
                 <table className="min-w-full table-auto">
-                    <thead className="bg-gradient-to-r   from-indigo-500 via-purple-500 to-pink-500 ...  text-left text-sm uppercase text-white">
+                    <thead className="bg-gradient-to-r   from-indigo-500 via-purple-500 to-pink-500 ...   text-sm uppercase text-white">
                         <tr>
                             <th className="py-3 px-6">Logo</th>
                             <th className="py-3 px-6">Company</th>
@@ -64,7 +70,7 @@ const Myapplications = () => {
                         {applications.map((app) => (
                             <tr
                                 key={app._id}
-                                className="border-t hover:bg-gray-50 transition duration-300"
+                                className="border-t hover:bg-gray-50 transition duration-300 text-center"
                             >
                                 <td className="py-4 px-6">
                                     <img
@@ -76,13 +82,19 @@ const Myapplications = () => {
                                 <td className="py-4 px-6 font-semibold">{app.company}</td>
                                 <td className="py-4 px-6">{app.title}</td>
                                 <td className="py-4 px-6">{app.applicant_email}</td>
-                                <td className="py-4 px-6 text-center">
+                                <td className="py-4 px-6 space-x-1 text-center">
                                     <button
                                         onClick={() => handleDelete(app._id)}
                                         className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
                                     >
                                         Delete
                                     </button>
+                                    <Link
+                                       to={`/viewApplication/${app?.job_id}`}
+                                        className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
+                                    >
+                                        View Application
+                                    </Link>
                                 </td>
                             </tr>
                         ))}
@@ -122,12 +134,21 @@ const Myapplications = () => {
                                         <span className="font-semibold">Email:</span>{" "}
                                         {app.applicant_email}
                                     </p>
-                                    <button
+                                    <div className='grid gap-3'>
+                                        <button
                                         onClick={() => handleDelete(app._id)}
                                         className="mt-3 bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600 w-full"
                                     >
                                         Delete
                                     </button>
+                                     <Link
+                                     
+                                       to={`/viewApplication/${app?.job_id}`}
+                                        className="bg-red-500 text-center hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
+                                    >
+                                        View Application
+                                    </Link>
+                                    </div>
                                 </div>
                             </div>
                         ))}

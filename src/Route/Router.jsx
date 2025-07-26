@@ -13,6 +13,7 @@ import Privateroute from '../Route/Privateroute'
 import Jobdetails from "../components/Jobdetails";
 import Applyforjob from "../components/Applyforjob";
 import MyJobPost from "../components/MyJobPost";
+import ViewApplicationJob from "../components/ViewApplicationJob";
 
 const router = createBrowserRouter([
  
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         {
             path:'/my-jobs',
             element:<Privateroute><MyJobPost></MyJobPost></Privateroute>
+        },
+        {
+            path:'/viewApplication/:job_id',
+            element:<Privateroute><ViewApplicationJob></ViewApplicationJob></Privateroute>,
+            loader:({params})=>fetch(`http://localhost:5000/job-application/${params.job_id}`)
         },
         {
             path:'/jobdetails/:id',
