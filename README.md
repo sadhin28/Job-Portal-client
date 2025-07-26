@@ -60,7 +60,7 @@ The purpose of this project is to assess skills, creativity, and problem-solving
 - 🧪 **Backend:** Node.js, Express.js
 - 🗂️ **Database:** MongoDB
 - 🔐 **Authentication:** Firebase Auth, Google Auth
-- ☁️ **Deployment:** [Platform Name]
+- ☁️ **Deployment:** [Firebase]
 - 🛠️ **Version Control:** Git & GitHub
 
 ---
