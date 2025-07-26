@@ -31,7 +31,7 @@ const MyJobPost = () => {
                                 .then(res => res.json())
                                 .then(data => {
                                     if (data.deletedCount > 0) {
-                                        setMyJobPosts(apply => apply.filter(apply => apply._id !== _id));
+                                        setMyJobPosts(apply => apply.filter(apply => apply._id !== id));
                                         Swal.fire({
                                             title: "Successfully Deleted!",
                                             text: "Your Job Post has been deleted.",

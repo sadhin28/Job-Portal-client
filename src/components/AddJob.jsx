@@ -95,7 +95,7 @@ const AddJob = () => {
                  .then(res => res.json())
                  .then(data => {
                      
-                         navigate('/my-jobs')
+                       
                          e.value = ''
                          Swal.fire({
                              title: `${dataToSend.company}`,
@@ -103,7 +103,7 @@ const AddJob = () => {
                              icon: "success",
                              draggable: true
                          });
-                     
+                       navigate('/my-jobs')
      
                  })
                  .catch(error => {
@@ -153,30 +153,48 @@ const AddJob = () => {
       </label>
 
       {/* Job Type */}
-      <label className="block mb-2">
-        Job Type:
-        <input
-          type="text"
-          name="jobType"
-          value={formData.jobType}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
+        <div className="w-full">
+      <label htmlFor="jobType" className="block text-sm font-medium text-gray-700 mb-1">
+        Job Type
       </label>
+      <select
+        id="jobType"
+        name="jobType"
+        onChange={handleChange}
+        className="w-full p-2 border rounded"
+      >
+        <option value="">Select a job type</option>
+        <option value="full-time">Full-Time</option>
+        <option value="part-time">Part-Time</option>
+        <option value="remote">Remote</option>
+        <option value="intern">Internship</option>
+        <option value="Contractual">Contract</option>
+      </select>
+    </div>
+     
 
       {/* Category */}
-      <label className="block mb-2">
-        Category:
-        <input
-          type="text"
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
+       <div className="w-full">
+      <label htmlFor="jobCategory" className="block text-sm font-medium text-gray-700 mb-1">
+        Job Category
       </label>
+      <select
+        id="jobCategory"
+        name="category"
+        onChange={handleChange}
+        className="w-full p-2 border rounded"
+      >
+        <option value="">Select a category</option>
+        <option value="development">Development</option>
+        <option value="design">Design</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        <option value="support">Customer Support</option>
+        <option value="hr">Human Resources</option>
+        <option value="finance">Finance</option>
+        <option value="management">Management</option>
+      </select>
+    </div>
 
       {/* Application Deadline */}
       <label className="block mb-2">
