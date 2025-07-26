@@ -1,3 +1,4 @@
+import { FaSquareWebAwesome } from 'react-icons/fa6';
 import {  Link, useLoaderData } from 'react-router-dom';
 
 const Jobdetails = () => {
@@ -16,7 +17,8 @@ const Jobdetails = () => {
     company_logo,
     hr_email,
     hr_name,
-      _id
+      _id,
+      applicationCount
   } = job;
     return (
        <div className='p-2 bg-gradient-to-r  from-indigo-400  to-pink-400 ... '>
@@ -59,6 +61,10 @@ const Jobdetails = () => {
         <p>
           <strong>💰 Salary:</strong> {salaryRange.min} - {salaryRange.max}{" "}
           {salaryRange.currency.toUpperCase()}
+        </p>
+        <p className='flex items-center gap-1'>
+          <FaSquareWebAwesome></FaSquareWebAwesome>
+          <strong className=''> Applicatin Count:</strong> {applicationCount?applicationCount:'0'}
         </p>
       </div>
 
