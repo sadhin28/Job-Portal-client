@@ -1,8 +1,10 @@
-import {  useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const ViewApplicationJob = () => {
     const applications = useLoaderData()
-
+    const handleChange = (e,id) => {
+         console.log(e.target.value,id)
+    }
     return (
         <div className="bg-gradient-to-r py-8  from-indigo-400 min-h-screen  to-pink-400 ...">
             <div className="w-11/12 mx-auto  overflow-x-auto">
@@ -15,16 +17,17 @@ const ViewApplicationJob = () => {
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Title</th>
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Company</th>
                             <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Email</th>
+                            <th className="py-2 px-3 sm:py-3 sm:px-6 border border-gray-300">Status</th>
                         </tr>
                     </thead>
                     <tbody className=" text-center text-xs sm:text-sm">
                         {applications.length > 0 ? (
-                            applications.map((app,index) => (
+                            applications.map((app, index) => (
                                 <tr
                                     key={app._id}
-                                    className="border-t  border-gray-300 hover:bg-gray-50 transition duration-300"
+                                    className="border-t  border-gray-300 hover:bg-gray-400 transition duration-300"
                                 >
-                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300 font-medium">{index +1}</td>
+                                    <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300 font-medium">{index + 1}</td>
                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300">
                                         <img
                                             src={app.company_logo}
@@ -36,6 +39,24 @@ const ViewApplicationJob = () => {
                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300">{app.title}</td>
                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300">{app.company}</td>
                                     <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300 break-all">{app.applicant_email}</td>
+                                    <td className="py-2 px-3 sm:py-4 sm:px-6 border border-gray-300 break-all">
+                                        <div className="w-full">
+
+                                            <select
+                                                id="status"
+                                                name="status"
+                                                onChange={(e)=>handleChange(e,app._id)}
+                                                className="w-full p-2 border rounded"
+                                            >
+                                                <option disabled>Change Status</option>
+                                                <option value="under-review">Under Review</option>
+                                                <option value="set-interval">Set Interview</option>
+                                                <option value="hired">Hired</option>
+                                                <option value="rejected">Rejected</option>
+                                               
+                                            </select>
+                                        </div>
+                                    </td>
                                 </tr>
                             ))
                         ) : (
