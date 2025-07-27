@@ -49,7 +49,7 @@ const Register = () => {
          res.user &&navigate(from)
       })
       .catch(error => {
-
+          toast.error(error.message)
       })
 
 
