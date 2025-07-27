@@ -63,6 +63,7 @@ const Myapplications = () => {
                             <th className="py-3 px-6">Company</th>
                             <th className="py-3 px-6">Title</th>
                             <th className="py-3 px-6">Email</th>
+                            <th className="py-3 px-6">Status</th>
                             <th className="py-3 px-6 text-center">Action</th>
                         </tr>
                     </thead>
@@ -80,10 +81,11 @@ const Myapplications = () => {
                                         className="w-12 h-12 object-contain rounded-full border p-1"
                                     />
                                 </td>
-                                <td className="py-4 px-6 font-semibold">{app.company}</td>
-                                <td className="py-4 px-6">{app.title}</td>
-                                <td className="py-4 px-6">{app.applicant_email}</td>
-                                <td className="py-4 px-6 space-x-1 text-center">
+                                <td className="py-4 px-6 font-semibold">{app?.company}</td>
+                                <td className="py-4 px-6">{app?.title}</td>
+                                <td className="py-4 px-6">{app?.applicant_email}</td>
+                                <td className='py-4 px-6'>{app?.status}</td>
+                                <td className="py-4 px-3 space-x-1 text-center">
                                     <button
                                         onClick={() => handleDelete(app._id)}
                                         className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
@@ -135,6 +137,12 @@ const Myapplications = () => {
                                         <span className="font-semibold">Email:</span>{" "}
                                         {app.applicant_email}
                                     </p>
+                                   {
+                                     app?.status &&<p className="text-sm text-gray-700">
+                                       <span className="font-semibold">Status:</span>{" "}
+                                        {app?.status}
+                                    </p>
+                                   }
                                     <div className='grid gap-3'>
                                         <button
                                         onClick={() => handleDelete(app._id)}
