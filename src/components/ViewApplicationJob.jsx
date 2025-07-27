@@ -1,9 +1,32 @@
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const ViewApplicationJob = () => {
     const applications = useLoaderData()
+    console.log(applications)
     const handleChange = (e,id) => {
-         console.log(e.target.value,id)
+        
+         const data = {
+            status:e.target.value
+         }
+         fetch(`http://localhost:5000/apply/${id}`,{
+            method:'PATCH',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+         })
+         .then(res=>res.json())
+         .then(data=>{
+            if(data.modifiedCount){
+               toast.success('Apply Status Update')
+            }
+         })
+         
+         .catch(error=>{
+            toast.error(error.message)
+         })
     }
     return (
         <div className="bg-gradient-to-r py-8  from-indigo-400 min-h-screen  to-pink-400 ...">
@@ -45,14 +68,15 @@ const ViewApplicationJob = () => {
                                             <select
                                                 id="status"
                                                 name="status"
+                                                
                                                 onChange={(e)=>handleChange(e,app._id)}
                                                 className="w-full p-2 border rounded"
                                             >
-                                                <option disabled>Change Status</option>
-                                                <option value="under-review">Under Review</option>
-                                                <option value="set-interval">Set Interview</option>
-                                                <option value="hired">Hired</option>
-                                                <option value="rejected">Rejected</option>
+                                                <option>{ app.status && app.status}</option>
+                                                <option value="UnderReview">UnderReview</option>
+                                                <option value="Interview">Interview</option>
+                                                <option value="Hired">Hired</option>
+                                                <option value="Rejected">Rejected</option>
                                                
                                             </select>
                                         </div>
