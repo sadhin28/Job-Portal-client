@@ -10,7 +10,7 @@ const ViewApplicationJob = () => {
          const data = {
             status:e.target.value
          }
-         fetch(`http://localhost:5000/apply/${id}`,{
+         fetch(`https://job-portal-server-ed8n.onrender.com/apply/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'
