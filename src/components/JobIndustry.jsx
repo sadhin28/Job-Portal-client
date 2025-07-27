@@ -68,7 +68,7 @@ const JobIndustry = () => {
   {
     "id": 8,
     "title": "Technical Support",
-    "image": "https://thumbs.dreamstime.com/z/technical-support-center-customer-service-internet-business-technology-concept-technical-support-center-customer-service-internet-102190919.jpg",
+    "image": "https://tse2.mm.bing.net/th/id/OIP._6aX2tO_BnT9Afva-aqhpwHaDc?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     "dsc": "Assist users and ensure seamless IT operations and troubleshooting."
   },
   {
