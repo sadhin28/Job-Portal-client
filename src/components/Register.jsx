@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/Authprovider";
 import app from "../firebase/firebase.init";
 import Lottie from "lottie-react";
 import registerLottieData from '../assets/lotte/registeranimation.json'
+import axios from "axios";
 const Register = () => {
  const location =useLocation()
     const navigate = useNavigate()
@@ -23,19 +24,21 @@ const Register = () => {
 
     CreateNewUser(email, password)
       .then((result) => {
+       
         const user = result.user;
         setuser(user);
         toast.success("Successfully Registered", {
           position: "top-center",
           autoClose: 2000,
         });
-
+        
         updateUserProfile(name, photoUrl)
           .then(() => {
 
              result.user &&navigate(from)
             toast.success("Profile updated successfully")
           })
+
       });
   }
 
