@@ -7,7 +7,7 @@ import { AuthContext } from '../Provider/Authprovider';
 import loginAnimation from '../assets/lotte/LoginAnimation.json'
 import app from '../firebase/firebase.init';
 import Lottie from 'lottie-react';
-import axios from 'axios';
+
 
 const Login = () => {
     const location = useLocation()
@@ -15,9 +15,7 @@ const Login = () => {
 
     const from = location.state || '/'
     const { setuser, login, forgotPassword } = useContext(AuthContext)
-    const [userEmail,setuserEmail]=useState([])
-
-
+    
     const handleSubmit = (e) => {
 
         e.preventDefault()
@@ -27,13 +25,7 @@ const Login = () => {
      
         login(email, password)
             .then(result => {
-                  setuser(result.user)
-                  setuserEmail(result.user.email)
-                  const user ={userEmail}
-                    axios.post('https://job-portal-server-ed8n.onrender.com/jwt', user,{withCredentials:true})
-                    .then(res => {
-                    console.log(res.data)
-                })
+                setuser(result.user)
                 result.user && navigate(from)
             })
             .catch(error => {
@@ -47,7 +39,6 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(res => {
                 setuser(res.user)
-                setuserEmail(res.user.email)
                 res.user && navigate(from)
             })
             .catch(error => {

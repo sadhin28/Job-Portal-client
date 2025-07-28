@@ -1,21 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/Authprovider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
-    console.log(applications)
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        // fetch(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
-        //     .then(res => res.json())
-        //     .then(data => setapplication(data))
-      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`,{withCredentials:true})
-      .then(res=>setapplication(res.data))
-    }, [user.email])
+        fetch(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setapplication(data))
+    }, [])
     
     useEffect(() => {
         fetch(`https://job-portal-server-ed8n.onrender.com/apply`)
