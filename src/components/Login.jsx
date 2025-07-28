@@ -25,7 +25,7 @@ const Login = () => {
      
         login(email, password)
             .then(result => {
-                setuser(result.user)
+                
                 result.user && navigate(from)
             })
             .catch(error => {

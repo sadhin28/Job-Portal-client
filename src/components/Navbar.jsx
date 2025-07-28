@@ -34,6 +34,8 @@ const Navbar = () => {
         },] : [])
 
     ]
+
+
     return (
         <>
             {/* Navbar */}
