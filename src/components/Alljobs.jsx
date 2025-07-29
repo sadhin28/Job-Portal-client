@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import AlljobCard from "./AlljobCard";
+import axios from "axios";
 
 const Alljobs = () => {
   const [job, setjobs] = useState([]);
 
   useEffect(() => {
-    fetch("https://job-portal-server-ed8n.onrender.com/jobs")
-      .then((res) => res.json())
-      .then((data) => setjobs(data));
+    axios.get('https://job-portal-server-ed8n.onrender.com/jobs')
+    .then(res=>setjobs(res.data))
   }, []);
 
   const [searchText, setSearchText] = useState("");
