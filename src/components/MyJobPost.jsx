@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/Authprovider";
 import MyJobPostCard from "./MyJobPostCard";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const MyJobPost = () => {
        const [job,setMyJobPosts]=useState([]);
@@ -10,9 +11,8 @@ const MyJobPost = () => {
    
         const navigate= useNavigate()
         useEffect(()=>{
-            fetch(`https://job-portal-server-ed8n.onrender.com/my-jobposts?email=${user.email}`)
-            .then(res=>res.json())
-            .then(data=>setMyJobPosts(data))
+            axios.get(`https://job-portal-server-ed8n.onrender.com/my-jobposts?email=${user.email}`)
+            .then(res=>setMyJobPosts(res.data))
         },[])
         const onDelete=(id)=>{
             Swal.fire({
