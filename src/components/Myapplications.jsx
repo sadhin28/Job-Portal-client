@@ -102,7 +102,7 @@ const Myapplications = () => {
                                     </button>
                                     <Link
                                        to={`/viewApplication/${app?.job_id}`}
-                                        className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
+                                        className="bg-green-500 hover:bg-gray-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
                                     >
                                         View Application
                                     </Link>
