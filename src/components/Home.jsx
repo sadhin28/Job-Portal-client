@@ -4,6 +4,8 @@ import Banner from "./Banner";
 import Hotjob from "./Hotjob";
 import JobIndustry from "./JobIndustry";
 import ToptenCompany from "./ToptenCompany";
+import Faqsection from "./Faqsection";
+
 
 const Home = () => {
   const [job, setjobs] =useState([]);
@@ -27,6 +29,7 @@ const Home = () => {
               job.map(job=> <Hotjob  job={job} key={job._id}></Hotjob>)
              }
            </section>
+           <Faqsection></Faqsection>
         </div>
     );
 };
