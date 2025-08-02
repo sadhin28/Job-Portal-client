@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 const ViewApplicationJob = () => {
     const applications = useLoaderData()
-    console.log(applications)
+    
     const handleChange = (e,id) => {
         
          const data = {

@@ -10,12 +10,9 @@ const Myapplications = () => {
     const [applications, setapplication] = useState([]);
     const { user } = useContext(AuthContext)
     useEffect(() => {
-        // fetch(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
-        //     .then(res => res.json())
-        //     .then(data => setapplication(data))
-      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
+      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`,{withCredentials:true})
       .then(res=>setapplication(res.data))
-    }, [])
+    }, [user.email])
     
     useEffect(() => {
         fetch(`https://job-portal-server-ed8n.onrender.com/apply`)
