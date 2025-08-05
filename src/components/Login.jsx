@@ -13,29 +13,21 @@ import axios from 'axios';
 const Login = () => {
     const location = useLocation()
     const navigate = useNavigate()
-  
+
     const from = location.state || '/'
     const { setuser, login, forgotPassword } = useContext(AuthContext)
-    
+
     const handleSubmit = (e) => {
 
         e.preventDefault()
 
         const email = e.target.email.value
         const password = e.target.password.value
-     
+
         login(email, password)
             .then(result => {
-                const user ={email:result.user.email}
-             
-                axios.post('https://job-portal-server-ed8n.onrender.com/jwt',user,{
-                    withCredentials:true
-                })
-                .then(res=>{
-                   
-                    
-                })
-               result.user && navigate(from) 
+
+                result.user && navigate(from)
             })
             .catch(error => {
                 toast.error(error.message)
@@ -47,15 +39,6 @@ const Login = () => {
     const handelLoginWithGoogle = () => {
         signInWithPopup(auth, provider)
             .then(res => {
-                 const user ={email:res.user.email}
-             
-                axios.post('https://job-portal-server-ed8n.onrender.com/jwt',user,{
-                    withCredentials:true
-                })
-                .then(res=>{
-                   
-                    
-                })
                 setuser(res.user)
                 res.user && navigate(from)
             })

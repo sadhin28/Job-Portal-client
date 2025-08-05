@@ -8,11 +8,12 @@ import axios from 'axios';
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
+    console.log(applications)
     const { user } = useContext(AuthContext)
     useEffect(() => {
-      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`,{withCredentials:true})
+      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
       .then(res=>setapplication(res.data))
-    }, [user.email])
+    }, [])
     
     useEffect(() => {
         fetch(`https://job-portal-server-ed8n.onrender.com/apply`)
