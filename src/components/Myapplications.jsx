@@ -91,7 +91,7 @@ const Myapplications = () => {
                                 <td className="py-4 px-6">{app?.title}</td>
                                 <td className="py-4 px-6">{app?.applicant_email}</td>
                                 <td className='py-4 px-6'>{app?.status}</td>
-                                <td className="py-4 px-3 space-x-1 text-center">
+                                <td className="py-4 font-bold px-3 space-x-1 text-center">
                                     <button
                                         onClick={() => handleDelete(app._id)}
                                         className="bg-red-500 hover:bg-red-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
@@ -100,7 +100,7 @@ const Myapplications = () => {
                                     </button>
                                     <Link
                                        to={`/viewApplication/${app?.job_id}`}
-                                        className="bg-green-500 hover:bg-gray-600 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
+                                        className="bg-green-500 hover:bg-gray-500 text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
                                     >
                                         View Application
                                     </Link>
@@ -138,7 +138,7 @@ const Myapplications = () => {
                                         <p className="text-sm text-gray-500">{app.title}</p>
                                     </div>
                                 </div>
-                                <div>
+                                <div className='font-bold'>
                                     <p className="text-sm text-gray-700">
                                         <span className="font-semibold">Email:</span>{" "}
                                         {app.applicant_email}
@@ -159,7 +159,7 @@ const Myapplications = () => {
                                      <Link
                                      
                                        to={`/viewApplication/${app?.job_id}`}
-                                        className="bg-green-500 hover:bg-gray-600 text-center text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
+                                        className="bg-green-500  hover:bg-gray-500 text-center text-white text-sm px-4 py-2 rounded-lg transition duration-200 shadow-md"
                                     >
                                         View Application
                                     </Link>
