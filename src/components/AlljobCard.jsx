@@ -78,7 +78,7 @@ const AlljobCard = ({job}) => {
 
       {/* CTA Button */}
       <div className="mt-6">
-        <Link to={`/jobdetails/${_id}`} className="w-full flex justify-center items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-xl transition duration-300">
+        <Link to={`/jobdetails/${_id}`} className="w-full flex justify-center items-center gap-3 bg-gradient-to-r  from-indigo-500 via-purple-500 to-pink-500 ... text-white font-semibold py-2 rounded-xl transition duration-300">
            <FaEye></FaEye>
            View Details
         </Link>
