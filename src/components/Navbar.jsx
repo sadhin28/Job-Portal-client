@@ -55,7 +55,7 @@ const Navbar = () => {
                     {
                         navlink.map(data => <NavLink
                             className={({ isActive }) =>
-                                isActive ? " font-bold border-black border-[2px] p-1 rounded" : "text-white"
+                                isActive ? " text-black font-bold border-black border-[2px] p-1 rounded" : "text-white"
                             }
                             onClick={toggleSidebar} to={data.link}>{data.name}</NavLink>)
                     }
