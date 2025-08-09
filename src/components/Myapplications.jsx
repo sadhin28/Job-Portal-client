@@ -3,7 +3,7 @@ import { AuthContext } from '../Provider/Authprovider';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import LoadingSpiner from '../components/LoadingSpiner'
 
 
 const Myapplications = () => {
@@ -170,7 +170,9 @@ const Myapplications = () => {
                     </div>
                 ) : (
                     <div className=" flex justify-center items-center w-11/12 mx-auto">
+                       
                         <h1 className="lg:text-5xl mt-20 md:text-3xl text-xl font-bold text-center ">No applications found.!</h1>
+                        
                     </div>
                 )
                 }
