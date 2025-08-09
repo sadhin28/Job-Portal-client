@@ -77,7 +77,7 @@ const Myapplications = () => {
                         {applications.map((app,index) => (
                             <tr
                                 key={app._id}
-                                className="border-t hover:bg-gray-50 transition duration-300 text-center"
+                                className="border-t hover:bg-blue-100 transition duration-300 text-center"
                             >     <td className="py-4 px-6 font-semibold">{index +1}</td>
                                 <td className="py-4 px-6">
                                 
