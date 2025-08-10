@@ -171,7 +171,7 @@ const Myapplications = () => {
                 ) : (
                     <div className=" flex justify-center items-center w-11/12 mx-auto">
                        
-                        <h1 className="lg:text-5xl mt-20 md:text-3xl text-xl font-bold text-center ">No applications found.!</h1>
+                        <h1 className="lg:text-5xl mt-20 md:text-3xl text-xl font-bold text-center text-white">No applications found.!</h1>
                         
                     </div>
                 )
