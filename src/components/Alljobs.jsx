@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AlljobCard from "./AlljobCard";
 import axios from "axios";
+import AddstrraBanner from "./AddstrraBanner";
 
 const Alljobs = () => {
   const [job, setjobs] = useState([]);
@@ -44,6 +45,7 @@ const Alljobs = () => {
 
   return (
     <div className="px-4 w-11/12 mx-auto mb-10 mt-10 ">
+      <AddstrraBanner></AddstrraBanner>
       {/* Search & Filter Controls */}
       <div className="mb-6 flex flex-col md:flex-row items-start md:items-center gap-4 ">
         {/* Search input */}
