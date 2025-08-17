@@ -5,6 +5,7 @@ import Hotjob from "./Hotjob";
 import JobIndustry from "./JobIndustry";
 import ToptenCompany from "./ToptenCompany";
 import Faqsection from "./Faqsection";
+import AddstrraAd from "./AddstrraAd";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
     }, [])
     return (
         <div className="w-11/12 mx-auto">
+           <AddstrraAd></AddstrraAd>
            <Banner></Banner>
            <JobIndustry></JobIndustry>
             <div>
