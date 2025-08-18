@@ -23,7 +23,7 @@ const Jobdetails = () => {
   } = job;
     return (
        <div className='p-2 bg-gradient-to-r  from-indigo-400  to-pink-400 ... '>
-         <AddstrraBanner></AddstrraBanner>
+         {/* <AddstrraBanner></AddstrraBanner> */}
         <div className="bg-gradient-to-r  from-indigo-200  to-pink-200 ...  max-w-5xl mx-auto p-6 shadow-md rounded-xl my-10">
         <div className='py-5 '>
                <Link to="/" className=" text-lg font-semibold text-gray-700 hover:underline">
