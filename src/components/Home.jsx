@@ -18,7 +18,7 @@ const Home = () => {
     }, [])
     return (
         <div className="w-11/12 mx-auto">
-           <AddstrraAd></AddstrraAd>
+           {/* <AddstrraAd></AddstrraAd> */}
            <Banner></Banner>
            <JobIndustry></JobIndustry>
             <div>
