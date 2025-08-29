@@ -8,7 +8,6 @@ import LoadingSpiner from '../components/LoadingSpiner'
 
 const Myapplications = () => {
     const [applications, setapplication] = useState([]);
-    console.log(applications)
     const { user } = useContext(AuthContext)
     useEffect(() => {
       axios.get(`https://job-portal-server-seven-delta.vercel.app/job-application?email=${user.email}`)
