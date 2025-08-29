@@ -7,7 +7,7 @@ const Alljobs = () => {
   const [job, setjobs] = useState([]);
 
   useEffect(() => {
-    axios.get('https://job-portal-server-ed8n.onrender.com/jobs')
+    axios.get('https://job-portal-server-seven-delta.vercel.app/jobs')
     .then(res=>setjobs(res.data))
   }, []);
 

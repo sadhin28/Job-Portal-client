@@ -48,22 +48,23 @@ const router = createBrowserRouter([
         {
             path:'/viewApplication/:job_id',
             element:<Privateroute><ViewApplicationJob></ViewApplicationJob></Privateroute>,
-            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/job-application/${params.job_id}`)
+            loader:({params})=>fetch(`https://job-portal-server-seven-delta.vercel.app/job-application/${params.job_id}`)
         },
+        
         {
             path:'/jobdetails/:id',
             element:<Privateroute><Jobdetails></Jobdetails></Privateroute>,
-            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-seven-delta.vercel.app/jobs/${params.id}`)
         },
         {
             path:'/jobapply/:id',
             element:<Privateroute><Applyforjob></Applyforjob></Privateroute>,
-            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-seven-delta.vercel.app/jobs/${params.id}`)
         },
         {
             path:'/UpdateJobPost/:id',
             element:<Privateroute><UpdateJobPost></UpdateJobPost></Privateroute>,
-            loader:({params})=>fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${params.id}`)
+            loader:({params})=>fetch(`https://job-portal-server-seven-delta.vercel.app/jobs/${params.id}`)
         },
         {
             path:'/login',

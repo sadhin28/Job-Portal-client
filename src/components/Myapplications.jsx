@@ -11,12 +11,12 @@ const Myapplications = () => {
     console.log(applications)
     const { user } = useContext(AuthContext)
     useEffect(() => {
-      axios.get(`https://job-portal-server-ed8n.onrender.com/job-application?email=${user.email}`)
+      axios.get(`https://job-portal-server-seven-delta.vercel.app/job-application?email=${user.email}`)
       .then(res=>setapplication(res.data))
     }, [])
     
     useEffect(() => {
-        fetch(`https://job-portal-server-ed8n.onrender.com/apply`)
+        fetch(`https://job-portal-server-seven-delta.vercel.app/apply`)
             .then(res => res.json())
             .then(data => {
 
@@ -33,7 +33,7 @@ const Myapplications = () => {
             confirmButtonText: "Confirm Delete"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://job-portal-server-ed8n.onrender.com/apply/${_id}`, {
+                fetch(`https://job-portal-server-seven-delta.vercel.app/apply/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

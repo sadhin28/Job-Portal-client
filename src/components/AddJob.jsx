@@ -84,7 +84,7 @@ const AddJob = () => {
     
     
         //post now
-             fetch('https://job-portal-server-ed8n.onrender.com/jobs', {
+             fetch('https://job-portal-server-seven-delta.vercel.app/jobs', {
                  method: 'POST',
                  headers: {
                      'content-type': 'application/json'

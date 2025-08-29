@@ -23,7 +23,7 @@ const Applyforjob = () => {
  }
 
         //post now
-        fetch('https://job-portal-server-ed8n.onrender.com/apply', {
+        fetch('https://job-portal-server-seven-delta.vercel.app/apply', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

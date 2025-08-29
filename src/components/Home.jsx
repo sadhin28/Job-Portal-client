@@ -12,7 +12,7 @@ const Home = () => {
   const [job, setjobs] =useState([]);
    
     useEffect(() => {
-        fetch('https://job-portal-server-ed8n.onrender.com/jobs')
+        fetch('https://job-portal-server-seven-delta.vercel.app/jobs')
             .then(res => res.json())
             .then(data =>setjobs(data))
     }, [])

@@ -11,7 +11,7 @@ const MyJobPost = () => {
    
         const navigate= useNavigate()
         useEffect(()=>{
-            axios.get(`https://job-portal-server-ed8n.onrender.com/my-jobposts?email=${user.email}`)
+            axios.get(`https://job-portal-server-seven-delta.vercel.app/my-jobposts?email=${user.email}`)
             .then(res=>setMyJobPosts(res.data))
         },[])
         const onDelete=(id)=>{
@@ -25,7 +25,7 @@ const MyJobPost = () => {
                         confirmButtonText: "Confirm Delete"
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${id}`, {
+                            fetch(`https://job-portal-server-seven-delta.vercel.app/jobs/${id}`, {
                                 method: 'DELETE'
                             })
                                 .then(res => res.json())

@@ -83,7 +83,7 @@ const UpdateJobPost = () => {
         };
 
         //update Post
-        fetch(`https://job-portal-server-ed8n.onrender.com/jobs/${updateJobs._id}`, {
+        fetch(`https://job-portal-server-seven-delta.vercel.app/jobs/${updateJobs._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
